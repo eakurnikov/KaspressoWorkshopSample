@@ -1,0 +1,32 @@
+task detektAll()
+
+def analysisDir = "${project.rootDir}/detekt"
+def reportsDir = "$analysisDir/reports"
+
+subprojects { subproject ->
+    apply plugin: 'io.gitlab.arturbosch.detekt'
+    apply from: '../dependencies.gradle'
+
+    configurations {
+        detekt
+    }
+
+    dependencies {
+        detekt("io.gitlab.arturbosch.detekt:detekt-formatting:$versions.detekt")
+        detekt("io.gitlab.arturbosch.detekt:detekt-cli:$versions.detekt")
+    }
+
+    detekt {
+        toolVersion = "$versions.detekt"
+        input = files("src")
+        filters = ".*/resources/.*,.*/build/.*"
+        config = files("${project.rootDir}/detekt/config/detekt/config.yml")
+
+        reports {
+            html {
+                destination = file("$reportsDir/html/detekt_${subproject.name}.html")
+            }
+        }
+    }
+    detektAll.dependsOn tasks.detekt
+}

@@ -1,0 +1,8 @@
+apply plugin: 'org.jetbrains.dokka-android'
+
+dokka {
+    moduleName = 'kaspressosample'
+    outputFormat = 'gfm'
+    outputDirectory = "$rootDir/docs/"
+    reportUndocumented = true
+}

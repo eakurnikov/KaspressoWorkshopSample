@@ -1,0 +1,31 @@
+buildscript {
+    apply from: 'dependencies.gradle'
+
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath "com.android.tools.build:gradle:$versions.gradle"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
+        classpath "org.jetbrains.dokka:dokka-android-gradle-plugin:$versions.dokka"
+    }
+}
+
+plugins {
+    id "io.gitlab.arturbosch.detekt" version '1.0.0-RC14'
+}
+
+apply from: 'detekt.gradle'
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

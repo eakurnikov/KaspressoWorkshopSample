@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Kaspresso Workshop Sample</string>
+
+    <string name="main_title">Screens to test</string>
+    <string name="simple_screen">Simple screen</string>
+    <string name="flaky_screen">Flaky screen</string>
+    <string name="webview_screen">WebView screen</string>
+    <string name="posts_screen">Posts screen</string>
+    <string name="doc_loc_screen">DocLoc screen</string>
+
+    <string name="simple_title">Simple title</string>
+    <string name="simple_hint">Write something</string>
+    <string name="delete">Delete</string>
+
+    <string name="loading">Loading&#8230;</string>
+    <string name="logical_error">Something went wrong :(</string>
+    <string name="error">Something went completely wrong :(</string>
+
+    <string name="no_entries">No entries yet :(</string>
+</resources>
