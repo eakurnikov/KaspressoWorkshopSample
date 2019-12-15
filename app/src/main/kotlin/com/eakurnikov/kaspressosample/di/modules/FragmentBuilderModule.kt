@@ -4,7 +4,7 @@ import dagger.Module
 import dagger.android.AndroidInjectionModule
 
 /**
- * Created by eakurnikov on 2019-10-07
+ * Created by eakurnikov on 2019-12-15
  */
 @Module(includes = [AndroidInjectionModule::class])
 interface FragmentBuilderModule {

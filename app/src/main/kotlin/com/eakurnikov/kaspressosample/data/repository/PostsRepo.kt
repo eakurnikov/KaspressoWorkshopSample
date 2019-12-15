@@ -5,7 +5,7 @@ import com.eakurnikov.kaspressosample.data.model.Post
 import io.reactivex.subjects.BehaviorSubject
 
 /**
- * Created by eakurnikov on 2019-10-05
+ * Created by eakurnikov on 2019-12-15
  */
 interface PostsRepo {
 

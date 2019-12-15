@@ -5,6 +5,9 @@ import com.eakurnikov.kaspressosample.data.db.entity.PostEntity
 import com.eakurnikov.kaspressosample.data.network.dto.CommentDto
 import com.eakurnikov.kaspressosample.data.network.dto.PostDto
 
+/**
+ * Created by eakurnikov on 2019-12-15
+ */
 data class Post(
     val postId: Long,
     val userId: Long,

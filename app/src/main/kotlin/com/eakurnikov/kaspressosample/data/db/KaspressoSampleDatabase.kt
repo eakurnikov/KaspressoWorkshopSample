@@ -7,7 +7,7 @@ import com.eakurnikov.kaspressosample.data.db.entity.PostEntity
 import com.eakurnikov.kaspressosample.data.db.entity.CommentEntity
 
 /**
- * Created by eakurnikov on 2019-09-15
+ * Created by eakurnikov on 2019-12-15
  */
 @Database(
     entities = [

@@ -18,6 +18,9 @@ import io.reactivex.observers.DisposableObserver
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_posts.*
 
+/**
+ * Created by eakurnikov on 2019-12-15
+ */
 class PostsActivity : BaseActivity<PostsViewModel>() {
 
     companion object {

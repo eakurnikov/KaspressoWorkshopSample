@@ -7,7 +7,7 @@ import dagger.Module
 import dagger.Provides
 
 /**
- * Created by eakurnikov on 2019-10-07
+ * Created by eakurnikov on 2019-12-15
  */
 @Module(includes = [DatabaseModule::class])
 class DaoModule {

@@ -8,7 +8,7 @@ import io.reactivex.subjects.BehaviorSubject
 import javax.inject.Inject
 
 /**
- * Created by eakurnikov on 2019-10-05
+ * Created by eakurnikov on 2019-12-15
  */
 class PostsViewModel @Inject constructor(
     private val postsRepo: PostsRepo

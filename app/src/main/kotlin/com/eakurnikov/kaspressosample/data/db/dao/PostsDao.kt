@@ -11,7 +11,7 @@ import com.eakurnikov.kaspressosample.data.db.entity.CommentEntity
 import io.reactivex.Single
 
 /**
- * Created by eakurnikov on 2019-10-05
+ * Created by eakurnikov on 2019-12-15
  */
 @Dao
 interface PostsDao {

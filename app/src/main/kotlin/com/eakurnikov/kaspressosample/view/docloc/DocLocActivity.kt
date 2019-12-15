@@ -9,6 +9,9 @@ import com.eakurnikov.kaspressosample.view.base.BaseActivity
 import com.eakurnikov.kaspressosample.viewmodel.docloc.DocLocViewModel
 import dagger.android.AndroidInjection
 
+/**
+ * Created by eakurnikov on 2019-12-15
+ */
 class DocLocActivity : BaseActivity<DocLocViewModel>() {
 
     companion object {

@@ -8,7 +8,7 @@ import com.eakurnikov.kaspressosample.data.db.DatabaseNames.COMMENTS_TABLE_NAME
 import com.eakurnikov.kaspressosample.data.network.dto.CommentDto
 
 /**
- * Created by eakurnikov on 2019-09-15
+ * Created by eakurnikov on 2019-12-15
  */
 @Entity(
     tableName = COMMENTS_TABLE_NAME,

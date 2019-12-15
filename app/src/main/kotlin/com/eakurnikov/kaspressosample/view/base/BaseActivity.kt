@@ -6,7 +6,7 @@ import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
 
 /**
- * Created by eakurnikov on 2019-10-07
+ * Created by eakurnikov on 2019-12-15
  */
 abstract class BaseActivity<ViewModel : BaseViewModel> : DaggerAppCompatActivity() {
 

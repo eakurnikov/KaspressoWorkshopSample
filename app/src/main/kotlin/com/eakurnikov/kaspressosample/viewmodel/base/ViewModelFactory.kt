@@ -10,7 +10,7 @@ import javax.inject.Inject
 import javax.inject.Provider
 
 /**
- * Created by eakurnikov on 2019-10-07
+ * Created by eakurnikov on 2019-12-15
  */
 @AppScope
 class ViewModelFactory @Inject constructor(

@@ -3,7 +3,7 @@ package com.eakurnikov.common.annotations
 import javax.inject.Qualifier
 
 /**
- * Created by eakurnikov on 2019-09-15
+ * Created by eakurnikov on 2019-12-15
  */
 @Qualifier
 @MustBeDocumented

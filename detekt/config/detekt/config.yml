@@ -26,10 +26,10 @@ test-pattern: # Configure exclusions for test sources
 build:
   maxIssues: 0
   weights:
-    # complexity: 2
-    # LongParameterList: 1
-    # style: 1
-    # comments: 1
+  # complexity: 2
+  # LongParameterList: 1
+  # style: 1
+  # comments: 1
 
 processors:
   active: true
@@ -178,18 +178,18 @@ exceptions:
   TooGenericExceptionCaught:
     active: false
     exceptionNames:
-     - Error
-     - Exception
-     - RuntimeException
-     - Throwable
+      - Error
+      - Exception
+      - RuntimeException
+      - Throwable
     allowedExceptionNameRegex: "^(_|(ignore|expected).*)"
   TooGenericExceptionThrown:
     active: false
     exceptionNames:
-     - Error
-     - Exception
-     - Throwable
-     - RuntimeException
+      - Error
+      - Exception
+      - Throwable
+      - RuntimeException
 
 formatting:
   active: true

@@ -8,7 +8,7 @@ import dagger.Binds
 import dagger.Module
 
 /**
- * Created by eakurnikov on 2019-09-15
+ * Created by eakurnikov on 2019-12-15
  */
 @Module
 interface AppModule {

@@ -3,7 +3,7 @@ package com.eakurnikov.common.di.annotations
 import javax.inject.Scope
 
 /**
- * Created by eakurnikov on 2019-09-15
+ * Created by eakurnikov on 2019-12-15
  */
 @Scope
 @MustBeDocumented

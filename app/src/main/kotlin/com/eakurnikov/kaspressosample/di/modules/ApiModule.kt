@@ -7,7 +7,7 @@ import dagger.Provides
 import retrofit2.Retrofit
 
 /**
- * Created by eakurnikov on 2019-10-07
+ * Created by eakurnikov on 2019-12-15
  */
 @Module(includes = [NetworkModule::class])
 class ApiModule {

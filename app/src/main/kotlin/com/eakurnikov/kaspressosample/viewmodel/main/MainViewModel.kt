@@ -11,6 +11,9 @@ import com.eakurnikov.kaspressosample.view.webview.WebViewActivity
 import com.eakurnikov.kaspressosample.viewmodel.base.BaseViewModel
 import javax.inject.Inject
 
+/**
+ * Created by eakurnikov on 2019-12-15
+ */
 class MainViewModel @Inject constructor() : BaseViewModel() {
 
     fun onButtonClick(context: Context, view: View?) {

@@ -3,6 +3,9 @@ package com.eakurnikov.kaspressosample.data.model
 import com.eakurnikov.kaspressosample.data.db.entity.CommentEntity
 import com.eakurnikov.kaspressosample.data.network.dto.CommentDto
 
+/**
+ * Created by eakurnikov on 2019-12-15
+ */
 data class Comment(
     val commentId: Long,
     val postId: Long,

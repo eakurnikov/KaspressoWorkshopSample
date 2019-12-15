@@ -15,7 +15,7 @@ import dagger.Module
 import dagger.multibindings.IntoMap
 
 /**
- * Created by eakurnikov on 2019-10-07
+ * Created by eakurnikov on 2019-12-15
  */
 @Module
 interface ViewModelModule {

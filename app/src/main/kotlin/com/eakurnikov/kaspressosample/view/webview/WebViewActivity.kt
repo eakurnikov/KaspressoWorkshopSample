@@ -14,6 +14,9 @@ import com.eakurnikov.kaspressosample.viewmodel.webview.WebViewModel
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_webview.*
 
+/**
+ * Created by eakurnikov on 2019-12-15
+ */
 class WebViewActivity : BaseActivity<WebViewModel>() {
 
     companion object {

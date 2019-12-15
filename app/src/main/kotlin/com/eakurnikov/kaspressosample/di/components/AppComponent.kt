@@ -10,7 +10,7 @@ import dagger.Component
 import dagger.android.AndroidInjector
 
 /**
- * Created by eakurnikov on 2019-09-15
+ * Created by eakurnikov on 2019-12-15
  */
 @AppScope
 @Component(

@@ -9,6 +9,9 @@ import com.eakurnikov.kaspressosample.viewmodel.main.MainViewModel
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_main.*
 
+/**
+ * Created by eakurnikov on 2019-12-15
+ */
 class MainActivity : BaseActivity<MainViewModel>() {
 
     private val onBtnClickListener = { view: View? ->

@@ -4,6 +4,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.eakurnikov.kaspressosample.data.model.Post
 
+/**
+ * Created by eakurnikov on 2019-12-15
+ */
 class PostsAdapter : RecyclerView.Adapter<PostViewHolder>() {
     var data: List<Post> = listOf()
 

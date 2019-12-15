@@ -10,6 +10,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.eakurnikov.kaspressosample.R
 import com.eakurnikov.kaspressosample.data.model.Post
 
+/**
+ * Created by eakurnikov on 2019-12-15
+ */
 class PostViewHolder(
     itemView: View
 ) : RecyclerView.ViewHolder(itemView) {

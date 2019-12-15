@@ -5,7 +5,7 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 
 /**
- * Created by eakurnikov on 2019-10-05
+ * Created by eakurnikov on 2019-12-15
  */
 abstract class BaseViewModel : ViewModel() {
 

@@ -12,6 +12,9 @@ import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_flaky.*
 import java.util.concurrent.TimeUnit
 
+/**
+ * Created by eakurnikov on 2019-12-15
+ */
 class FlakyActivity : BaseActivity<FlakyViewModel>() {
 
     companion object {

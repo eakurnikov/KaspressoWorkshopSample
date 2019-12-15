@@ -10,6 +10,9 @@ import com.eakurnikov.kaspressosample.viewmodel.simple.SimpleViewModel
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_simple.*
 
+/**
+ * Created by eakurnikov on 2019-12-15
+ */
 class SimpleActivity : BaseActivity<SimpleViewModel>() {
 
     companion object {

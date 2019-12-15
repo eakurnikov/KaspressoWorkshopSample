@@ -8,6 +8,9 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
 
+/**
+ * Created by eakurnikov on 2019-12-15
+ */
 interface PostsApi {
 
     @GET("/users")
