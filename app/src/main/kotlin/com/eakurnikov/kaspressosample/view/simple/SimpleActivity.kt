@@ -36,6 +36,7 @@ class SimpleActivity : BaseActivity<SimpleViewModel>() {
     }
 
     private fun initViews() {
-        btn_delete.setOnClickListener { et_simple.text = null }
+        btn_simple_delete.setOnClickListener { et_simple.text = null }
+        btn_simple_next.setOnClickListener { SecondActivity.start(this, et_simple.text.toString()) }
     }
 }

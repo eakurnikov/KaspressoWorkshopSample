@@ -8,6 +8,7 @@ import com.eakurnikov.kaspressosample.viewmodel.base.ViewModelFactory
 import com.eakurnikov.kaspressosample.viewmodel.docloc.DocLocViewModel
 import com.eakurnikov.kaspressosample.viewmodel.main.MainViewModel
 import com.eakurnikov.kaspressosample.viewmodel.flaky.FlakyViewModel
+import com.eakurnikov.kaspressosample.viewmodel.simple.SecondViewModel
 import com.eakurnikov.kaspressosample.viewmodel.simple.SimpleViewModel
 import com.eakurnikov.kaspressosample.viewmodel.webview.WebViewModel
 import dagger.Binds
@@ -29,6 +30,11 @@ interface ViewModelModule {
     @IntoMap
     @ViewModelKey(SimpleViewModel::class)
     fun bindSimpleViewModel(viewModel: SimpleViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(SecondViewModel::class)
+    fun bindSecondViewModel(viewModel: SecondViewModel): ViewModel
 
     @Binds
     @IntoMap

@@ -80,9 +80,17 @@ dependencies {
 
     // Tests
     testImplementation "junit:junit:$versions.junit"
-    androidTestImplementation "androidx.test:runner:$versions.testingSupportLibrary"
+    androidTestImplementation "androidx.test.ext:junit:$versions.extJunit"
     androidTestImplementation "androidx.test:rules:$versions.testingSupportLibrary"
+    androidTestImplementation "androidx.test:runner:$versions.testingSupportLibrary"
+    androidTestImplementation "androidx.test.espresso:espresso-web:$versions.espresso"
     androidTestImplementation "androidx.test.espresso:espresso-core:$versions.espresso"
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:$versions.espresso"
+    androidTestImplementation "androidx.test.espresso:espresso-intents:$versions.espresso"
+    androidTestImplementation ("com.kaspersky.android-components:kaspresso:$versions.kaspresso") {
+        exclude group: "com.android.support"
+        exclude group: "com.google.code.gson"
+    }
 }
 
 task sourcesJar(type: Jar) {

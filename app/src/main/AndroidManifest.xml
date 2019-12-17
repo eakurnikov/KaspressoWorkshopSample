@@ -36,6 +36,10 @@
             android:label="@string/simple_screen" />
 
         <activity
+            android:name=".view.simple.SecondActivity"
+            android:label="@string/second_screen" />
+
+        <activity
             android:name=".view.docloc.DocLocActivity"
             android:label="@string/doc_loc_screen" />
 
