@@ -35,8 +35,6 @@ class PostsRepoImpl @Inject constructor(
         postsSubject.onNext(Resource.Loading())
         disposeDao()
         daoDisposable = dao.getPosts()
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
             .flatMapPublisher { Flowable.fromIterable(it) }
             .flatMapSingle { postEntity: PostEntity ->
                 Single.zip(
@@ -48,6 +46,8 @@ class PostsRepoImpl @Inject constructor(
                 )
             }
             .toList()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
                 { posts: List<Post> ->
                     postsSubject.onNext(Resource.Success(posts.takeLast(2)))
@@ -65,8 +65,6 @@ class PostsRepoImpl @Inject constructor(
         postsSubject.onNext(Resource.Loading())
         disposeApi()
         apiDisposable = api.getPosts()
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
             .flatMapPublisher { postDtos: List<PostDto> ->
                 dao.insertPostsList(postDtos.map { PostEntity(it) })
                 Flowable.fromIterable(postDtos)
@@ -82,6 +80,8 @@ class PostsRepoImpl @Inject constructor(
                 )
             }
             .toList()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
                 { posts: List<Post> ->
                     postsSubject.onNext(Resource.Success(posts))
