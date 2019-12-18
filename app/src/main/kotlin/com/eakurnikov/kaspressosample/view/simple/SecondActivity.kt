@@ -40,8 +40,7 @@ class SecondActivity : BaseActivity<SecondViewModel>() {
 
     private fun initViews() {
         intent?.extras?.get(TITLE_KEY)?.toString().let { title: String? ->
-            tv_second_title.text =
-                if (title.isNullOrEmpty()) getString(R.string.second_title_stub) else title
+            tv_second_title.text = title
         }
     }
 }

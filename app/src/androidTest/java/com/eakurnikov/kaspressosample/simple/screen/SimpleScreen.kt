@@ -5,6 +5,7 @@ import com.agoda.kakao.screen.Screen
 import com.agoda.kakao.text.KButton
 import com.agoda.kakao.text.KTextView
 import com.eakurnikov.kaspressosample.R
+import com.eakurnikov.kaspressosample.simple.matchers.ClassNameMatcher
 
 object SimpleScreen : Screen<SimpleScreen>() {
 
@@ -14,5 +15,13 @@ object SimpleScreen : Screen<SimpleScreen>() {
 
     val btnDelete = KButton { withId(R.id.btn_simple_delete) }
 
-    val btnNext = KButton { withId(R.id.btn_simple_next) }
+    val btnNext = KButton {
+        isDescendantOfA {
+            withId(R.id.simple_root)
+        }
+        withSibling {
+            withText(R.string.delete)
+        }
+        withBackgroundColor(R.color.colorPrimary)
+    }
 }

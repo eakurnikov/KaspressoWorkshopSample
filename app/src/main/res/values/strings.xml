@@ -13,7 +13,6 @@
     <string name="simple_hint">Type something</string>
     <string name="delete">Delete</string>
     <string name="next">Next</string>
-    <string name="second_title_stub">Empty title</string>
 
     <string name="loading">Loading&#8230;</string>
     <string name="logical_error">Something went wrong :(</string>

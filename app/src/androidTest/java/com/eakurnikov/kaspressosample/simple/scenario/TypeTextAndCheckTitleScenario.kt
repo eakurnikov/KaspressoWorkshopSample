@@ -18,45 +18,41 @@ class TypeTextAndCheckTitleScenario(
                     hasTextColor(R.color.colorPrimary)
                 }
 
-                editText {
-                    hasHint(R.string.simple_hint)
-                    hasEmptyText()
-                    typeText("tratata")
-                    hasText("tratata")
-                }
-
-                closeSoftKeyboard()
-
                 btnDelete {
+                    isVisible()
+                    hasText(R.string.delete)
                     isClickable()
                     click()
                 }
 
                 editText {
+                    hasHint(R.string.simple_hint)
                     hasEmptyText()
                     typeText(text)
+                    hasText(text)
                 }
 
                 closeSoftKeyboard()
 
                 btnNext {
+                    isVisible()
+                    hasText(R.string.next)
+                    isClickable()
                     click()
                 }
             }
         }
 
-        step("Check \"$text\" is displayed") {
+        step("Check \"$text\" is displayed and return to Simple screen") {
             SecondScreen {
                 title {
-                    isDisplayed()
                     isVisible()
+                    hasTextColor(R.color.colorPrimary)
                     hasText(text)
                 }
 
                 pressBack()
             }
-
-            SimpleScreen.btnDelete.click()
         }
     }
 }
