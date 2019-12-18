@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Kaspresso Workshop Sample</string>
 
+    <!-- Main activity -->
     <string name="main_title">Screens to test</string>
     <string name="simple_screen">Simple screen</string>
     <string name="second_screen">Second screen</string>
@@ -9,14 +10,23 @@
     <string name="posts_screen">Posts screen</string>
     <string name="doc_loc_screen">DocLoc screen</string>
 
+    <!-- Simple activity Activity -->
     <string name="simple_title">Simple title</string>
     <string name="simple_hint">Type something</string>
     <string name="delete">Delete</string>
     <string name="next">Next</string>
 
+    <!-- Flaky activity -->
+    <string name="flaky_textview_text_start">Flaky TextView</string>
+    <string name="flaky_textview_text_end">2</string>
+    <string name="flaky_btn_text_start">Flaky Button</string>
+    <string name="flaky_btn_text_end">6</string>
+    <string name="success">Success</string>
+
+    <!-- Posts activity -->
     <string name="loading">Loading&#8230;</string>
     <string name="logical_error">Something went wrong :(</string>
     <string name="error">Something went completely wrong :(</string>
-
     <string name="no_entries">No entries yet :(</string>
+
 </resources>

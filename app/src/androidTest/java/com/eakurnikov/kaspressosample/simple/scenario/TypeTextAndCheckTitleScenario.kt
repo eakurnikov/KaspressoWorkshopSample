@@ -11,6 +11,8 @@ class TypeTextAndCheckTitleScenario(
 ) : Scenario() {
 
     override val steps: TestContext<Unit>.() -> Unit = {
+        testLogger.i("The given text is \"$text\"")
+
         step("Type \"$text\" and open Second screen") {
             SimpleScreen {
                 title {
