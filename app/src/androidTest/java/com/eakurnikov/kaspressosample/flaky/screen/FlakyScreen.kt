@@ -5,6 +5,9 @@ import com.agoda.kakao.scroll.KScrollView
 import com.agoda.kakao.text.KButton
 import com.eakurnikov.kaspressosample.R
 
+/**
+ * Created by eakurnikov on 2019-12-18
+ */
 object FlakyScreen : Screen<FlakyScreen>() {
 
     val scrollView = KScrollView { withId(R.id.scroll_view_flaky) }

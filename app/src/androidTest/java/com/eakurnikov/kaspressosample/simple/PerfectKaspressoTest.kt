@@ -15,6 +15,9 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
+/**
+ * Created by eakurnikov on 2019-12-18
+ */
 @RunWith(AndroidJUnit4::class)
 class PerfectKaspressoTest : TestCase() {
 

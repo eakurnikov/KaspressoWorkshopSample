@@ -7,8 +7,7 @@ import dagger.android.DaggerApplication
 /**
  * Created by eakurnikov on 2019-12-15
  */
-class KaspressoSampleApp : DaggerApplication() {
-
+open class KaspressoSampleApp : DaggerApplication() {
     override fun applicationInjector(): AndroidInjector<out KaspressoSampleApp> {
         return DaggerAppComponent.builder().create(this)
     }

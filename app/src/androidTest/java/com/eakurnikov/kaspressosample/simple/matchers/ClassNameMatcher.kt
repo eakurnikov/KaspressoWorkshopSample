@@ -3,6 +3,9 @@ package com.eakurnikov.kaspressosample.simple.matchers
 import org.hamcrest.Description
 import org.hamcrest.TypeSafeMatcher
 
+/**
+ * Created by eakurnikov on 2019-12-18
+ */
 class ClassNameMatcher(
     private val expectedClassName: String
 ) : TypeSafeMatcher<String>() {

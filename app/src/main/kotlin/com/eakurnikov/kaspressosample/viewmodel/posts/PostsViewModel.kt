@@ -19,7 +19,7 @@ class PostsViewModel @Inject constructor(
 
     override fun onStart() {
         super.onStart()
-        postsRepo.getCachedPosts()
+        postsRepo.loadPosts()
     }
 
     override fun subscribe() {

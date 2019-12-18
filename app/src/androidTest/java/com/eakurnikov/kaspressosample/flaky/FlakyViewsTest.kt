@@ -14,6 +14,9 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import java.util.concurrent.TimeUnit
 
+/**
+ * Created by eakurnikov on 2019-12-18
+ */
 @RunWith(AndroidJUnit4::class)
 class FlakyViewsTest : TestCase() {
 

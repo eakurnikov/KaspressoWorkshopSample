@@ -6,6 +6,9 @@ import com.eakurnikov.kaspressosample.simple.screen.SimpleScreen
 import com.kaspersky.kaspresso.testcases.api.scenario.Scenario
 import com.kaspersky.kaspresso.testcases.core.testcontext.TestContext
 
+/**
+ * Created by eakurnikov on 2019-12-18
+ */
 class TypeTextAndCheckTitleScenario(
     private val text: String
 ) : Scenario() {

@@ -4,6 +4,9 @@ import android.view.View
 import org.hamcrest.Description
 import org.hamcrest.TypeSafeMatcher
 
+/**
+ * Created by eakurnikov on 2019-12-18
+ */
 open class ViewSizeMatcher private constructor(
     private val expectedWidth: Float,
     private val expectedHeight: Float

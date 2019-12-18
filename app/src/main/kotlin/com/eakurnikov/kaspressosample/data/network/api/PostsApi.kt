@@ -1,11 +1,10 @@
-package com.eakurnikov.kaspressosample.data.network
+package com.eakurnikov.kaspressosample.data.network.api
 
 import com.eakurnikov.kaspressosample.data.network.dto.CommentDto
 import com.eakurnikov.kaspressosample.data.network.dto.PostDto
 import com.eakurnikov.kaspressosample.data.network.dto.UserDto
 import io.reactivex.Single
 import retrofit2.http.GET
-import retrofit2.http.Path
 import retrofit2.http.Query
 
 /**

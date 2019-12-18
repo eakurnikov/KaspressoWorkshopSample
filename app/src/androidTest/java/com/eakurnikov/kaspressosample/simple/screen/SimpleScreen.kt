@@ -7,6 +7,9 @@ import com.agoda.kakao.text.KTextView
 import com.eakurnikov.kaspressosample.R
 import com.eakurnikov.kaspressosample.simple.matchers.ClassNameMatcher
 
+/**
+ * Created by eakurnikov on 2019-12-18
+ */
 object SimpleScreen : Screen<SimpleScreen>() {
 
     val title = KTextView { withId(R.id.tv_simple_title) }

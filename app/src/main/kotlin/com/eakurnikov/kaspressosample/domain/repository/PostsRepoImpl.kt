@@ -5,7 +5,7 @@ import com.eakurnikov.kaspressosample.data.db.dao.PostsDao
 import com.eakurnikov.kaspressosample.data.model.Post
 import com.eakurnikov.kaspressosample.data.db.entity.CommentEntity
 import com.eakurnikov.kaspressosample.data.db.entity.PostEntity
-import com.eakurnikov.kaspressosample.data.network.PostsApi
+import com.eakurnikov.kaspressosample.data.network.api.PostsApi
 import com.eakurnikov.kaspressosample.data.network.dto.CommentDto
 import com.eakurnikov.kaspressosample.data.network.dto.PostDto
 import com.eakurnikov.kaspressosample.data.repository.PostsRepo

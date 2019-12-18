@@ -8,6 +8,9 @@ import androidx.core.content.ContextCompat
 import org.hamcrest.Description
 import org.hamcrest.TypeSafeMatcher
 
+/**
+ * Created by eakurnikov on 2019-12-18
+ */
 class BackgroundColorMatcher(
     @ColorRes private val colorRes: Int = -1,
     private val colorCode: String? = null
