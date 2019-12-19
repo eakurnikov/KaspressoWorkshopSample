@@ -39,7 +39,7 @@ class AppsTest : TestCase() {
     val activityTestRule = ActivityTestRule(MainActivity::class.java, true, true)
 
     @Test
-    fun test() {
+    fun appsTest() {
         before {
             activityTestRule.launchActivity(null)
             /**
@@ -50,6 +50,7 @@ class AppsTest : TestCase() {
              * Some action to revert the state
              */
         }.run {
+
             step("Install hello world apk") {
                 device.apps.install(TEST_APK_FILE_RELATIVE_PATH)
                 Assert.assertTrue(isAppInstalled(adbServer, TEST_APK_PACKAGE_NAME))

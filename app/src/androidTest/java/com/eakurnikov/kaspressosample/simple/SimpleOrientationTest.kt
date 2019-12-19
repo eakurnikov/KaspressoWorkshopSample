@@ -1,10 +1,12 @@
-package com.eakurnikov.kaspressosample.simple.screen
+package com.eakurnikov.kaspressosample.simple
 
 import android.Manifest
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.rule.ActivityTestRule
 import androidx.test.rule.GrantPermissionRule
 import com.eakurnikov.kaspressosample.R
+import com.eakurnikov.kaspressosample.simple.screen.MainScreen
+import com.eakurnikov.kaspressosample.simple.screen.SimpleScreen
 import com.eakurnikov.kaspressosample.view.main.MainActivity
 import com.kaspersky.kaspresso.device.exploit.Exploit
 import com.kaspersky.kaspresso.testcases.api.testcase.TestCase
@@ -28,7 +30,7 @@ class SimpleOrientationTest : TestCase() {
     val activityTestRule = ActivityTestRule(MainActivity::class.java, true, false)
 
     @Test
-    fun perfectKaspressoTest() {
+    fun simpleOrientationTest() {
         before {
             activityTestRule.launchActivity(null)
             device.exploit.setOrientation(Exploit.DeviceOrientation.Portrait)
@@ -37,8 +39,10 @@ class SimpleOrientationTest : TestCase() {
         }.run {
             step("Open Simple screen") {
                 MainScreen {
-                    title.hasText(R.string.main_title)
-                    title.hasTextColor(R.color.colorPrimary)
+                    title {
+                        hasText(R.string.main_title)
+                        hasTextColor(R.color.colorPrimary)
+                    }
 
                     toSimpleScreenBtn {
                         isVisible()

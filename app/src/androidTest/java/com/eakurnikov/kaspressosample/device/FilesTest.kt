@@ -37,7 +37,7 @@ class FilesTest : TestCase() {
     val activityTestRule = ActivityTestRule(MainActivity::class.java, true, true)
 
     @Test
-    fun filesSampleTest() {
+    fun filesTest() {
         before {
             activityTestRule.launchActivity(null)
             /**

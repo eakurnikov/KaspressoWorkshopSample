@@ -17,7 +17,7 @@ import org.junit.runner.RunWith
  * Created by eakurnikov on 2019-12-18
  */
 @RunWith(AndroidJUnit4::class)
-class PostsOfflineTest : TestCase() {
+class PostsOnlineTest : TestCase() {
 
     @get:Rule
     val runtimePermissionRule: GrantPermissionRule = GrantPermissionRule.grant(
@@ -29,7 +29,7 @@ class PostsOfflineTest : TestCase() {
     val activityTestRule = ActivityTestRule(MainActivity::class.java, true, false)
 
     @Test
-    fun postsOfflineTest() {
+    fun postsOnlineTest() {
         before {
             activityTestRule.launchActivity(null)
             device.network.disable()
@@ -50,14 +50,10 @@ class PostsOfflineTest : TestCase() {
                 }
             }
 
-            step("Check list is gone and error label is visible") {
+            step("Check list is visible and error label is not") {
                 PostsScreen {
-                    postsList.isGone()
-
-                    errorTextView {
-                        isVisible()
-                        hasAnyText()
-                    }
+                    postsList.isVisible()
+                    errorTextView.isGone()
                 }
             }
         }

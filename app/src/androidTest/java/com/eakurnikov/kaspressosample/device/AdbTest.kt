@@ -38,19 +38,6 @@ class AdbTest : TestCase() {
              * Some action to revert the state
              */
         }.run {
-            step("Open Simple screen") {
-                MainScreen {
-                    title.hasText(R.string.main_title)
-                    title.hasTextColor(R.color.colorPrimary)
-
-                    toSimpleScreenBtn {
-                        isVisible()
-                        hasText(R.string.simple_screen)
-                        isClickable()
-                        click()
-                    }
-                }
-            }
 
             step("Execute command on host") {
                 val result = adbServer.performCmd("hostname")

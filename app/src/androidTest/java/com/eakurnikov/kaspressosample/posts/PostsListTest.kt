@@ -19,7 +19,7 @@ import org.junit.runner.RunWith
  * Created by eakurnikov on 2019-12-18
  */
 @RunWith(AndroidJUnit4::class)
-class PostsTest : TestCase() {
+class PostsListTest : TestCase() {
 
     @get:Rule
     val runtimePermissionRule: GrantPermissionRule = GrantPermissionRule.grant(
@@ -31,7 +31,7 @@ class PostsTest : TestCase() {
     val activityTestRule = ActivityTestRule(MainActivity::class.java, true, false)
 
     @Test
-    fun postsTest() {
+    fun postsListsTest() {
         before {
             activityTestRule.launchActivity(null)
             /**

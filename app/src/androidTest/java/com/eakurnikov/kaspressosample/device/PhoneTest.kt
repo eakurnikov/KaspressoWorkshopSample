@@ -48,6 +48,7 @@ class PhoneTest : TestCase() {
              * Some action to revert the state
              */
         }.run {
+
             step("Emulate a call") {
                 device.phone.emulateCall(PHONE_NUMBER)
                 Screen.idle(CALL_DURATION)
