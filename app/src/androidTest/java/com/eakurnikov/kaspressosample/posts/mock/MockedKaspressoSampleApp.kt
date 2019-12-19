@@ -1,4 +1,4 @@
-package com.eakurnikov.kaspressosample.posts
+package com.eakurnikov.kaspressosample.posts.mock
 
 import com.eakurnikov.kaspressosample.di.components.DaggerAppComponent
 import com.eakurnikov.kaspressosample.di.modules.ApiModule

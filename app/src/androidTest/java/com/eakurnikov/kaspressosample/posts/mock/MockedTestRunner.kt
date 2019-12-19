@@ -1,4 +1,4 @@
-package com.eakurnikov.kaspressosample.posts
+package com.eakurnikov.kaspressosample.posts.mock
 
 import android.app.Application
 import android.content.Context
@@ -25,6 +25,11 @@ class MockedTestRunner : AndroidJUnitRunner() {
         classLoader: ClassLoader?,
         className: String?,
         context: Context?
-    ): Application =
-        super.newApplication(classLoader, MockedKaspressoSampleApp::class.java.name, context)
+    ): Application {
+        return super.newApplication(
+            classLoader,
+            MockedKaspressoSampleApp::class.java.name,
+            context
+        )
+    }
 }

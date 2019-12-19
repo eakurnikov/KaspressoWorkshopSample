@@ -11,7 +11,7 @@ interface PostsRepo {
 
     val postsSubject: BehaviorSubject<Resource<List<Post>>>
 
-    fun getCachedPosts()
+    fun getPosts()
 
     fun loadPosts()
 }

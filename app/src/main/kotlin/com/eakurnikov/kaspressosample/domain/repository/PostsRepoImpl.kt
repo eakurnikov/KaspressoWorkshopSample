@@ -31,7 +31,7 @@ class PostsRepoImpl @Inject constructor(
 
     override val postsSubject: BehaviorSubject<Resource<List<Post>>> = BehaviorSubject.create()
 
-    override fun getCachedPosts() {
+    override fun getPosts() {
         postsSubject.onNext(Resource.Loading())
         disposeDao()
         daoDisposable = dao.getPosts()
@@ -51,6 +51,7 @@ class PostsRepoImpl @Inject constructor(
             .subscribe(
                 { posts: List<Post> ->
                     postsSubject.onNext(Resource.Success(posts.takeLast(2)))
+                    loadPosts()
                 },
                 { error: Throwable ->
                     postsSubject.onNext(
@@ -84,7 +85,20 @@ class PostsRepoImpl @Inject constructor(
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
                 { posts: List<Post> ->
-                    postsSubject.onNext(Resource.Success(posts))
+                    postsSubject.onNext(
+                        Resource.Success(posts).apply {
+                            (data as MutableList).add(
+                                data.lastIndex + 1,
+                                Post(
+                                    0,
+                                    0,
+                                    "Last post",
+                                    "Perfect body",
+                                    emptyList()
+                                )
+                            )
+                        }
+                    )
                 },
                 { error: Throwable ->
                     postsSubject.onNext(

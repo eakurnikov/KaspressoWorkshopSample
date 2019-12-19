@@ -4,8 +4,8 @@ import android.Manifest
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.rule.ActivityTestRule
 import androidx.test.rule.GrantPermissionRule
-import com.agoda.kakao.screen.Screen
 import com.eakurnikov.kaspressosample.R
+import com.eakurnikov.kaspressosample.posts.screen.PostsScreen
 import com.eakurnikov.kaspressosample.simple.matchers.ViewSizeMatcher
 import com.eakurnikov.kaspressosample.simple.screen.MainScreen
 import com.eakurnikov.kaspressosample.view.main.MainActivity
@@ -32,22 +32,76 @@ class PostsTest : TestCase() {
 
     @Test
     fun postsTest() {
-        activityTestRule.launchActivity(null)
+        before {
+            activityTestRule.launchActivity(null)
+            /**
+             * Some action to prepare the state
+             */
+        }.after {
+            /**
+             * Some action to revert the state
+             */
+        }.run {
+            step("Open Posts screen") {
+                MainScreen {
+                    title.hasText(R.string.main_title)
+                    title.hasTextColor(R.color.colorPrimary)
 
-        MainScreen {
-            title.hasText(R.string.main_title)
-            title.hasTextColor(R.color.colorPrimary)
-
-            toPostsScreenBtn {
-                isVisible()
-                isClickable()
-                matches {
-                    withText(R.string.posts_screen)
-                    withMatcher(Matchers.not(ViewSizeMatcher.withWidthAndHeight(42f, 42f)))
+                    toPostsScreenBtn {
+                        isVisible()
+                        isClickable()
+                        matches {
+                            withText(R.string.posts_screen)
+                            withMatcher(Matchers.not(ViewSizeMatcher.withWidthAndHeight(42f, 42f)))
+                        }
+                        click()
+                    }
                 }
-                click()
+            }
+
+            step("Check list is fine") {
+                PostsScreen {
+                    postsList {
+                        isVisible()
+
+                        firstChild<PostsScreen.PostItem> {
+                            isVisible()
+                            title { hasAnyText() }
+                            body { hasAnyText() }
+                        }
+
+                        lastChild<PostsScreen.PostItem> {
+                            isVisible()
+                            title { hasAnyText() }
+                            body { hasAnyText() }
+                        }
+
+                        children<PostsScreen.PostItem> {
+                            isVisible()
+                            title { hasAnyText() }
+                            body { hasAnyText() }
+                        }
+
+                        childWith<PostsScreen.PostItem> {
+                            withDescendant { withText("Last post") }
+                        } perform {
+                            body {
+                                isVisible()
+                                hasText("Perfect body")
+                            }
+                        }
+
+                        childWith<PostsScreen.PostItem> {
+                            withDescendant { withText("Perfect body") }
+                        } perform {
+                            title {
+                                isDisplayed()
+                                hasText("Last post")
+                            }
+                        }
+                    }
+                }
             }
         }
-        Screen.idle(5000)
     }
 }

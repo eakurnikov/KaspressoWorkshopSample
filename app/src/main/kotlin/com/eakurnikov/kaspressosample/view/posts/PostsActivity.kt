@@ -46,7 +46,7 @@ class PostsActivity : BaseActivity<PostsViewModel>() {
                         else -> showPosts(resource.data)
                     }
                 }
-                is Resource.Loading -> showLoading()
+                is Resource.Loading -> showLoading(false)
                 is Resource.Error -> showError(resource.message)
             }
         }
@@ -84,10 +84,10 @@ class PostsActivity : BaseActivity<PostsViewModel>() {
     }
 
     private fun initViews() {
-        progress_bar_posts.visibility = View.VISIBLE
+        showLoading(false)
 
         layout_refresh_posts.setOnRefreshListener {
-            showLoading()
+            showLoading(true)
             viewModel.onRefresh()
         }
 
@@ -98,8 +98,13 @@ class PostsActivity : BaseActivity<PostsViewModel>() {
         }
     }
 
-    private fun showLoading() {
-        layout_refresh_posts.isRefreshing = true
+    private fun showLoading(isRefresh: Boolean) {
+        if (isRefresh) {
+            layout_refresh_posts.isRefreshing = true
+            progress_bar_posts.visibility = View.GONE
+        } else if (!layout_refresh_posts.isRefreshing) {
+            progress_bar_posts.visibility = View.VISIBLE
+        }
     }
 
     private fun showPosts(posts: List<Post>) {

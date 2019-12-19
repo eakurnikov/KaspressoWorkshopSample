@@ -1,4 +1,4 @@
-package com.eakurnikov.kaspressosample.posts
+package com.eakurnikov.kaspressosample.posts.mock
 
 import com.eakurnikov.kaspressosample.data.network.api.PostsApi
 import com.eakurnikov.kaspressosample.data.network.dto.*

@@ -41,7 +41,7 @@ class FlakyViewsTest : TestCase() {
              * Some action to revert the state
              */
         }.run {
-            step("Open Simple screen") {
+            step("Open Flaky screen") {
                 MainScreen {
                     title.hasText(R.string.main_title)
                     title.hasTextColor(R.color.colorPrimary)

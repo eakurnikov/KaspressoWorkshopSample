@@ -11,7 +11,7 @@ android {
         applicationId "com.eakurnikov.kaspressosample"
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "com.eakurnikov.kaspressosample.posts.MockedTestRunner"
+        testInstrumentationRunner "com.eakurnikov.kaspressosample.posts.mock.MockedTestRunner"
 
         sourceSets {
             main.java.srcDirs += 'src/main/kotlin'
