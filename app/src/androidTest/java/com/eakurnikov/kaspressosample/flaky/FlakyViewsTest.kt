@@ -7,6 +7,7 @@ import androidx.test.rule.GrantPermissionRule
 import com.eakurnikov.kaspressosample.R
 import com.eakurnikov.kaspressosample.flaky.screen.FlakyScreen
 import com.eakurnikov.kaspressosample.simple.screen.MainScreen
+import com.eakurnikov.kaspressosample.simple.screen.SecondScreen
 import com.eakurnikov.kaspressosample.view.main.MainActivity
 import com.kaspersky.kaspresso.testcases.api.testcase.TestCase
 import org.junit.Rule
@@ -53,50 +54,77 @@ class FlakyViewsTest : TestCase() {
                         click()
                     }
                 }
+            }
 
-                step("Check ScrollView screen is visible") {
-                    FlakyScreen {
-                        scrollView.isVisible()
+            step("Check ScrollView screen is visible") {
+                FlakyScreen {
+                    scrollView.isVisible()
+                }
+            }
+
+            step("Check flaky text view is visible") {
+                FlakyScreen {
+                    flakyTextView {
+                        isVisible()
+                        hasText(R.string.flaky_textview_text_start)
                     }
                 }
+            }
 
-                step("Check flaky text view is visible") {
-                    FlakyScreen {
-                        flakyTextView {
-                            isVisible()
-                            hasText(R.string.flaky_textview_text_start)
-                        }
+            step("Check flaky text view's text") {
+                FlakyScreen {
+                    flakySafely(timeoutMs = TimeUnit.SECONDS.toMillis(3)) {
+                        flakyTextView.hasText(R.string.flaky_textview_text_end)
                     }
                 }
+            }
 
-                step("Check flaky text view's text") {
-                    FlakyScreen {
-                        flakySafely(timeoutMs = TimeUnit.SECONDS.toMillis(3)) {
-                            flakyTextView.hasText(R.string.flaky_textview_text_end)
-                        }
+            step("Check flaky button is visible") {
+                FlakyScreen {
+                    flakyBtn {
+                        isVisible()
+                        hasText(R.string.flaky_btn_text_start)
                     }
                 }
+            }
 
-                step("Check flaky button is visible") {
-                    FlakyScreen {
+            step("Check flaky button's text") {
+                FlakyScreen {
+                    flakySafely(timeoutMs = TimeUnit.SECONDS.toMillis(4)) {
                         flakyBtn {
-                            isVisible()
-                            hasText(R.string.flaky_btn_text_start)
+                            hasText(R.string.flaky_btn_text_end)
+                            click()
                         }
                     }
                 }
+            }
 
-                step("Check flaky button's text") {
-                    FlakyScreen {
-                        flakySafely(timeoutMs = TimeUnit.SECONDS.toMillis(4)) {
-                            flakyBtn {
-                                hasText(R.string.flaky_btn_text_end)
-                                click()
-                            }
-                        }
+            step("Check success") {
+                SecondScreen {
+                    title {
+                        isVisible()
+                        hasTextColor(R.color.colorPrimary)
+                        hasText(R.string.success)
                     }
                 }
             }
         }
     }
 }
+
+//            Espresso.onView(ViewMatchers.withId(R.id.tv_flaky_2))
+//                .check(
+//                    ViewAssertions.matches(
+//                        ViewMatchers.withEffectiveVisibility(ViewMatchers.Visibility.VISIBLE)
+//                    )
+//                )
+//                .check(
+//                    ViewAssertions.matches(
+//                        ViewMatchers.withText(R.string.flaky_textview_text_start)
+//                    )
+//                )
+//                .check(
+//                    ViewAssertions.matches(
+//                        ViewMatchers.withText(R.string.flaky_textview_text_end)
+//                    )
+//                )
