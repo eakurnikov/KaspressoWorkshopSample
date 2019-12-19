@@ -33,9 +33,9 @@ class SimpleOrientationTest : TestCase() {
     fun simpleOrientationTest() {
         before {
             activityTestRule.launchActivity(null)
-            device.exploit.setOrientation(Exploit.DeviceOrientation.Portrait)
         }.after {
-            device.exploit.setOrientation(Exploit.DeviceOrientation.Landscape)
+            device.exploit.setOrientation(Exploit.DeviceOrientation.Portrait)
+            device.exploit.setAutoRotationEnabled(true)
         }.run {
             step("Open Simple screen") {
                 MainScreen {
@@ -78,8 +78,8 @@ class SimpleOrientationTest : TestCase() {
                 }
             }
 
-            step("Rotate device 5 times") {
-                for (i in 1..5) device.exploit.rotate()
+            step("Rotate device") {
+                device.exploit.rotate()
             }
 
             step("Check \"Kaspresso\" is still displayed") {
