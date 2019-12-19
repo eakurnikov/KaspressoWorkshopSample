@@ -16,6 +16,9 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
+/**
+ * Created by eakurnikov on 2019-12-18
+ */
 @RunWith(AndroidJUnit4::class)
 class WebViewTest : TestCase() {
 
@@ -29,7 +32,7 @@ class WebViewTest : TestCase() {
     val activityTestRule = ActivityTestRule(MainActivity::class.java, true, false)
 
     @Test
-    fun test() {
+    fun webViewTest() {
         before {
             activityTestRule.launchActivity(null)
             /**

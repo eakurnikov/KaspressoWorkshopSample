@@ -1,23 +1,21 @@
-package com.eakurnikov.kaspressosample.posts
+package com.eakurnikov.kaspressosample.device
 
 import android.Manifest
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.rule.ActivityTestRule
 import androidx.test.rule.GrantPermissionRule
 import com.eakurnikov.kaspressosample.R
-import com.eakurnikov.kaspressosample.posts.screen.PostsScreen
 import com.eakurnikov.kaspressosample.simple.screen.MainScreen
 import com.eakurnikov.kaspressosample.view.main.MainActivity
+import com.kaspersky.kaspresso.internal.exceptions.AdbServerException
 import com.kaspersky.kaspresso.testcases.api.testcase.TestCase
+import org.junit.Assert
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
-/**
- * Created by eakurnikov on 2019-12-18
- */
 @RunWith(AndroidJUnit4::class)
-class PostsOfflineTest : TestCase() {
+class AdbTest : TestCase() {
 
     @get:Rule
     val runtimePermissionRule: GrantPermissionRule = GrantPermissionRule.grant(
@@ -29,35 +27,50 @@ class PostsOfflineTest : TestCase() {
     val activityTestRule = ActivityTestRule(MainActivity::class.java, true, false)
 
     @Test
-    fun postsOfflineTest() {
+    fun adbTest() {
         before {
             activityTestRule.launchActivity(null)
-            device.network.disable()
+            /**
+             * Some action to prepare the state
+             */
         }.after {
-            device.network.enable()
+            /**
+             * Some action to revert the state
+             */
         }.run {
-            step("Open Posts screen") {
+            step("Open Simple screen") {
                 MainScreen {
                     title.hasText(R.string.main_title)
                     title.hasTextColor(R.color.colorPrimary)
 
-                    toPostsScreenBtn {
+                    toSimpleScreenBtn {
                         isVisible()
-                        hasText(R.string.posts_screen)
+                        hasText(R.string.simple_screen)
                         isClickable()
                         click()
                     }
                 }
             }
 
-            step("Check list is fine") {
-                PostsScreen {
-                    postsList.isGone()
+            step("Execute command on host") {
+                val result = adbServer.performCmd("hostname")
+                Assert.assertTrue(result.isNotEmpty())
+            }
 
-                    errorTextView {
-                        isVisible()
-                        hasAnyText()
-                    }
+            step("Execute ADB Shell command") {
+                val command = "pm list packages"
+
+                val result = adbServer.performShell(command)
+                Assert.assertTrue("package:${device.targetContext.packageName}" in result.first())
+            }
+
+            step("Execute ADB command") {
+                val command = "undefined_command"
+
+                try {
+                    adbServer.performAdb(command)
+                } catch (ex: AdbServerException) {
+                    Assert.assertTrue("unknown command $command" in ex.message)
                 }
             }
         }

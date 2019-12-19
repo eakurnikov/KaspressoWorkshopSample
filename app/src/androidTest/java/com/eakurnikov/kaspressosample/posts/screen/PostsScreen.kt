@@ -8,6 +8,9 @@ import com.agoda.kakao.text.KTextView
 import com.eakurnikov.kaspressosample.R
 import org.hamcrest.Matcher
 
+/**
+ * Created by eakurnikov on 2019-12-18
+ */
 object PostsScreen : Screen<PostsScreen>() {
 
     val errorTextView = KTextView { withId(R.id.tv_posts_error) }

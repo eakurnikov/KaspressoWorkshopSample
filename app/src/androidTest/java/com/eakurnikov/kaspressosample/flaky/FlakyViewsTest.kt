@@ -30,7 +30,7 @@ class FlakyViewsTest : TestCase() {
     val activityTestRule = ActivityTestRule(MainActivity::class.java, true, false)
 
     @Test
-    fun perfectKaspressoTest() {
+    fun flakyViewsTest() {
         before {
             activityTestRule.launchActivity(null)
             /**
