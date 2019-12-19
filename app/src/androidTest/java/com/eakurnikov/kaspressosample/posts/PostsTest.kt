@@ -58,6 +58,8 @@ class PostsTest : TestCase() {
 
             step("Check list is fine") {
                 PostsScreen {
+                    errorTextView.isGone()
+
                     postsList {
                         isVisible()
 

@@ -10,6 +10,8 @@ import org.hamcrest.Matcher
 
 object PostsScreen : Screen<PostsScreen>() {
 
+    val errorTextView = KTextView { withId(R.id.tv_posts_error) }
+
     val postsList = KRecyclerView(
         builder = { withId(R.id.list_posts) },
         itemTypeBuilder = { itemType(::PostItem) }

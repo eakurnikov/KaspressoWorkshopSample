@@ -16,7 +16,7 @@
             android:layout_height="match_parent" />
 
         <TextView
-            android:id="@+id/tv_posts"
+            android:id="@+id/tv_posts_error"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"

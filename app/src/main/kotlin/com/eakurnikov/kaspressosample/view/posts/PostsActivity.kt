@@ -111,7 +111,7 @@ class PostsActivity : BaseActivity<PostsViewModel>() {
         layout_refresh_posts.isRefreshing = false
         progress_bar_posts.visibility = View.GONE
         list_posts.visibility = View.VISIBLE
-        tv_posts.visibility = View.GONE
+        tv_posts_error.visibility = View.GONE
 
         adapter.apply {
             data = posts
@@ -123,15 +123,15 @@ class PostsActivity : BaseActivity<PostsViewModel>() {
         layout_refresh_posts.isRefreshing = false
         progress_bar_posts.visibility = View.GONE
         list_posts.visibility = View.GONE
-        tv_posts.visibility = View.VISIBLE
-        tv_posts.text = getString(R.string.no_entries)
+        tv_posts_error.visibility = View.VISIBLE
+        tv_posts_error.text = getString(R.string.no_entries)
     }
 
     private fun showError(message: String) {
         layout_refresh_posts.isRefreshing = false
         progress_bar_posts.visibility = View.GONE
         list_posts.visibility = View.GONE
-        tv_posts.visibility = View.VISIBLE
-        tv_posts.text = message
+        tv_posts_error.visibility = View.VISIBLE
+        tv_posts_error.text = message
     }
 }
