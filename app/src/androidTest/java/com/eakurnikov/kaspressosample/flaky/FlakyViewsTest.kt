@@ -65,7 +65,7 @@ class FlakyViewsTest : TestCase() {
             step("Check flaky text view is visible") {
                 FlakyScreen {
                     flakyTextView {
-                        isVisible()
+                        flakySafely(timeoutMs = 3000) { isVisible() }
                         hasText(R.string.flaky_textview_text_start)
                     }
                 }
@@ -73,7 +73,7 @@ class FlakyViewsTest : TestCase() {
 
             step("Check flaky text view's text") {
                 FlakyScreen {
-                    flakySafely(timeoutMs = TimeUnit.SECONDS.toMillis(3)) {
+                    flakySafely(timeoutMs = TimeUnit.SECONDS.toMillis(4)) {
                         flakyTextView.hasText(R.string.flaky_textview_text_end)
                     }
                 }
@@ -90,7 +90,7 @@ class FlakyViewsTest : TestCase() {
 
             step("Check flaky button's text") {
                 FlakyScreen {
-                    flakySafely(timeoutMs = TimeUnit.SECONDS.toMillis(4)) {
+                    flakySafely(timeoutMs = TimeUnit.SECONDS.toMillis(5)) {
                         flakyBtn {
                             hasText(R.string.flaky_btn_text_end)
                             click()

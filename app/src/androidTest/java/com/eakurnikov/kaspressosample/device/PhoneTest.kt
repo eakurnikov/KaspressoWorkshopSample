@@ -21,7 +21,7 @@ class PhoneTest : TestCase() {
     companion object {
         private const val PHONE_NUMBER = "+79111111111"
         private const val SMS_MESSAGE_TEXT = "Kaspresso"
-        private const val CONTENT_UPDATE_DELAY = 1_500L
+        private const val CONTENT_UPDATE_DELAY = 5_000L
         private const val CALL_DURATION = 2_000L
     }
 

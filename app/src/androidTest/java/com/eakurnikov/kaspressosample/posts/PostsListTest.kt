@@ -9,6 +9,7 @@ import com.eakurnikov.kaspressosample.posts.screen.PostsScreen
 import com.eakurnikov.kaspressosample.simple.matchers.ViewSizeMatcher
 import com.eakurnikov.kaspressosample.simple.screen.MainScreen
 import com.eakurnikov.kaspressosample.view.main.MainActivity
+import com.kaspersky.kaspresso.kaspresso.Kaspresso
 import com.kaspersky.kaspresso.testcases.api.testcase.TestCase
 import org.hamcrest.Matchers
 import org.junit.Rule
