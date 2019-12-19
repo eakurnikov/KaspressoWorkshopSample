@@ -12,8 +12,8 @@ android {
         versionCode 1
         versionName "1.0"
 
-//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        testInstrumentationRunner "com.eakurnikov.kaspressosample.posts.mock.MockedTestRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//        testInstrumentationRunner "com.eakurnikov.kaspressosample.posts.mock.MockedTestRunner"
 
         sourceSets {
             main.java.srcDirs += 'src/main/kotlin'
@@ -89,6 +89,8 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:$versions.espresso"
     androidTestImplementation "androidx.test.espresso:espresso-contrib:$versions.espresso"
     androidTestImplementation "androidx.test.espresso:espresso-intents:$versions.espresso"
+
+    // Kaspresso
     androidTestImplementation ("com.kaspersky.android-components:kaspresso:$versions.kaspresso") {
         exclude group: "com.android.support"
         exclude group: "com.google.code.gson"
