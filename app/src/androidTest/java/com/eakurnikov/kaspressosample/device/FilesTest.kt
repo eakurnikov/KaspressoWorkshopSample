@@ -34,7 +34,7 @@ class FilesTest : TestCase() {
     )
 
     @get:Rule
-    val activityTestRule = ActivityTestRule(MainActivity::class.java, true, true)
+    val activityTestRule = ActivityTestRule(MainActivity::class.java, true, false)
 
     @Test
     fun filesTest() {
