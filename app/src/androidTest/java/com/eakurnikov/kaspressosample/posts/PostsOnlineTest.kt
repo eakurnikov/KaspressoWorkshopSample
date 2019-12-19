@@ -32,9 +32,7 @@ class PostsOnlineTest : TestCase() {
     fun postsOnlineTest() {
         before {
             activityTestRule.launchActivity(null)
-            device.network.disable()
         }.after {
-            device.network.enable()
         }.run {
             step("Open Posts screen") {
                 MainScreen {
