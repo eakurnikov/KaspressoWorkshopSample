@@ -48,8 +48,8 @@ class FlakyViewsTest : TestCase() {
 
                     toFlakyScreenBtn {
                         isVisible()
-                        isClickable()
                         hasText(R.string.flaky_screen)
+                        isClickable()
                         click()
                     }
                 }

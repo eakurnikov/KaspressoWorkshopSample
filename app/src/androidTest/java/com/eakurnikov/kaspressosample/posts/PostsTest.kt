@@ -49,11 +49,8 @@ class PostsTest : TestCase() {
 
                     toPostsScreenBtn {
                         isVisible()
+                        hasText(R.string.posts_screen)
                         isClickable()
-                        matches {
-                            withText(R.string.posts_screen)
-                            withMatcher(Matchers.not(ViewSizeMatcher.withWidthAndHeight(42f, 42f)))
-                        }
                         click()
                     }
                 }

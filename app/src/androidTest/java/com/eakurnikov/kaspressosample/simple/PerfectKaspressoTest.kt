@@ -57,12 +57,12 @@ class PerfectKaspressoTest : TestCase() {
                         click()
                     }
                 }
-
-                scenario(TypeTextAndCheckTitleScenario("1"))
-                scenario(TypeTextAndCheckTitleScenario(" "))
-                scenario(TypeTextAndCheckTitleScenario("Kaspresso"))
-                scenario(TypeTextAndCheckTitleScenario(""))
             }
+
+            scenario(TypeTextAndCheckTitleScenario("1"))
+            scenario(TypeTextAndCheckTitleScenario(" "))
+            scenario(TypeTextAndCheckTitleScenario("Kaspresso"))
+            scenario(TypeTextAndCheckTitleScenario(""))
         }
     }
 }
