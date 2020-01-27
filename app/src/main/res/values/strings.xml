@@ -27,6 +27,6 @@
     <string name="loading">Loading&#8230;</string>
     <string name="logical_error">Something went wrong :(</string>
     <string name="error">Something went completely wrong :(</string>
-    <string name="no_entries">No entries yet :(</string>
+    <string name="no_entries">No entries yet :( Swipe to refresh</string>
 
 </resources>

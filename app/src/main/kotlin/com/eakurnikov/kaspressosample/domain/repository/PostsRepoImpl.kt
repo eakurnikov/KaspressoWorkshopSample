@@ -31,10 +31,10 @@ class PostsRepoImpl @Inject constructor(
 
     override val postsSubject: BehaviorSubject<Resource<List<Post>>> = BehaviorSubject.create()
 
-    override fun getPosts() {
+    override fun getCachedPosts(amount: Int) {
         postsSubject.onNext(Resource.Loading())
         disposeDao()
-        daoDisposable = dao.getPosts()
+        daoDisposable = dao.getPosts(amount)
             .flatMapPublisher { Flowable.fromIterable(it) }
             .flatMapSingle { postEntity: PostEntity ->
                 Single.zip(
@@ -50,8 +50,7 @@ class PostsRepoImpl @Inject constructor(
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
                 { posts: List<Post> ->
-                    postsSubject.onNext(Resource.Success(posts.takeLast(2)))
-                    loadPosts()
+                    postsSubject.onNext(Resource.Success(posts))
                 },
                 { error: Throwable ->
                     postsSubject.onNext(

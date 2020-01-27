@@ -14,12 +14,14 @@ class PostsViewModel @Inject constructor(
     private val postsRepo: PostsRepo
 ) : BaseViewModel() {
 
+    private val cachedPostsAmount: Int = 2
+
     var postsSubject: BehaviorSubject<Resource<List<Post>>> =
         BehaviorSubject.createDefault(Resource.Loading(listOf()))
 
     override fun onStart() {
         super.onStart()
-        postsRepo.getPosts()
+        postsRepo.getCachedPosts(cachedPostsAmount)
     }
 
     override fun subscribe() {

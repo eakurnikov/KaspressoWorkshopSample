@@ -7,17 +7,15 @@ import android.os.Bundle
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
-import androidx.lifecycle.ViewModelProviders
 import com.eakurnikov.kaspressosample.R
-import com.eakurnikov.kaspressosample.view.base.BaseActivity
-import com.eakurnikov.kaspressosample.viewmodel.webview.WebViewModel
 import dagger.android.AndroidInjection
+import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.activity_webview.*
 
 /**
  * Created by eakurnikov on 2019-12-15
  */
-class WebViewActivity : BaseActivity<WebViewModel>() {
+class WebViewActivity : DaggerAppCompatActivity() {
 
     companion object {
         private const val URL: String = "https://my.kaspersky.com/en/"
@@ -26,18 +24,10 @@ class WebViewActivity : BaseActivity<WebViewModel>() {
             context.startActivity(Intent(context, WebViewActivity::class.java))
     }
 
-    override lateinit var viewModel: WebViewModel
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_webview)
-
         AndroidInjection.inject(this)
-
-        viewModel = ViewModelProviders
-            .of(this, viewModelFactory)
-            .get(WebViewModel::class.java)
-
         initViews()
     }
 

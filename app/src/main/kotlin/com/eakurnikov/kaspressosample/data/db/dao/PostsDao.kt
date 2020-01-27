@@ -16,8 +16,8 @@ import io.reactivex.Single
 @Dao
 interface PostsDao {
 
-    @Query("SELECT * FROM $POSTS_TABLE_NAME")
-    fun getPosts(): Single<List<PostEntity>>
+    @Query("SELECT * FROM $POSTS_TABLE_NAME LIMIT :amount")
+    fun getPosts(amount: Int): Single<List<PostEntity>>
 
     @Query("SELECT * FROM $COMMENTS_TABLE_NAME WHERE postId = :postEntityId")
     fun getCommentsForPost(postEntityId: Long): Single<List<CommentEntity>>

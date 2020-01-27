@@ -5,19 +5,17 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
-import androidx.lifecycle.ViewModelProviders
 import com.eakurnikov.kaspressosample.R
-import com.eakurnikov.kaspressosample.view.base.BaseActivity
 import com.eakurnikov.kaspressosample.view.simple.SecondActivity
-import com.eakurnikov.kaspressosample.viewmodel.flaky.FlakyViewModel
 import dagger.android.AndroidInjection
+import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.activity_flaky.*
 import java.util.concurrent.TimeUnit
 
 /**
  * Created by eakurnikov on 2019-12-15
  */
-class FlakyActivity : BaseActivity<FlakyViewModel>() {
+class FlakyActivity : DaggerAppCompatActivity() {
 
     companion object {
         private val VISIBILITY_DELAY = TimeUnit.SECONDS.toMillis(1)
@@ -27,18 +25,10 @@ class FlakyActivity : BaseActivity<FlakyViewModel>() {
             context.startActivity(Intent(context, FlakyActivity::class.java))
     }
 
-    override lateinit var viewModel: FlakyViewModel
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_flaky)
-
         AndroidInjection.inject(this)
-
-        viewModel = ViewModelProviders
-            .of(this, viewModelFactory)
-            .get(FlakyViewModel::class.java)
-
         initViews()
     }
 
